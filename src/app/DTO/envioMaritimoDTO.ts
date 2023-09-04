@@ -4,7 +4,7 @@ import Producto from  './productoDTO';
 
 
 export default interface envioMaritimo{
-        id_envio_camiones?:number;
+        id_envio_maritimo?:number;
         cantidad_producto?: number;
         fecha_registro?: Date;
         fecha_entrega?: Date

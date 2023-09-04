@@ -18,6 +18,12 @@
         </div>
 
         <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Precio Envio</label>
+            <input type="text" class="form-control" formControlName="precio_envio"  aria-describedby="nombreHelp" placeholder="Precio Envio">
+            <small id="nombreHelp" class="form-text text-muted">Introduce Introduce el precio de envio </small>
+        </div>
+
+        <div class="form-group">
             <label for="Nombre" class="form-label mt-4">User</label>
             <input type="text" class="form-control" formControlName="user"  aria-describedby="nombreHelp" placeholder="User">
             <small id="nombreHelp" class="form-text text-muted">Introduce el id del usuario </small>
@@ -26,16 +32,9 @@
         <div class="form-group">
             <label for="Nombre" class="form-label mt-4">Bodega</label>
             <input type="text" class="form-control" formControlName="bodega"  aria-describedby="nombreHelp" placeholder="Bodega">
-            <small id="nombreHelp" class="form-text text-muted">Introduce el id dela bodega </small>
-        </div>
-
-        <div class="form-group">
-            <label for="Nombre" class="form-label mt-4">Precio Envio</label>
-            <input type="text" class="form-control" formControlName="precio_envio"  aria-describedby="nombreHelp" placeholder="Precio Envio">
-            <small id="nombreHelp" class="form-text text-muted">Introduce Introduce el precio de envio </small>
+            <small id="nombreHelp" class="form-text text-muted">Introduce el id de la bodega </small>
         </div>
        
-
         <div class="form-group">
             <label for="Nombre" class="form-label mt-4">Fecha Registro</label>
             <input type="text" class="form-control" formControlName="fecha_registro"  aria-describedby="nombreHelp" placeholder="Fecha Registro">
@@ -46,7 +45,7 @@
         <div class="form-group">
             <label for="Nombre" class="form-label mt-4">Fecha Entrega</label>
             <input type="text" class="form-control" formControlName="fecha_entrega"  aria-describedby="nombreHelp" placeholder="Fecha Entrega">
-            <small id="nombreHelp" class="form-text text-muted">Introduce Lafecga de entrega </small>
+            <small id="nombreHelp" class="form-text text-muted">Introduce La fecHa de entrega </small>
         </div>
 
         <div class="form-group">
@@ -58,13 +57,15 @@
         <div class="form-group">
             <label for="Nombre" class="form-label mt-4">Numero de guia</label>
             <input type="text" class="form-control" formControlName="numero_guia"  aria-describedby="nombreHelp" placeholder="Numero de guia">
-            <small id="nombreHelp" class="form-text text-muted">Introduce introducir  el numero de guia </small>
+            <small id="nombreHelp" class="form-text text-muted">Introduce  el numero de guia </small>
         </div>
     
         <div class="form-group">
-            <label for="Nombre" class="form-label mt-4">Descuento</label>
-            <input type="number" class="form-control" formControlName="descuento"  aria-describedby="nombreHelp" placeholder="Descuento">
-            <small id="nombreHelp" class="form-text text-muted">Este es el descuento para este envio </small>
+            
+            <label for="Nombre" class="form-label mt-4">Precio con descuento</label>
+            <input type="number" class="form-control" name="descuento" id="descuento"  value="{{precioFinal}}"  aria-describedby="nombreHelp" placeholder="Descuento">
+            
+            <small id="nombreHelp" class="form-text text-muted">${{descuento}} &nbsp; Este es el descuento para este envio </small>
         </div>
 
 
@@ -72,7 +73,7 @@
 
         <div class="form-group"> 
             <br>
-            <button type="button" class="btn btn-success" (click)="descuentoE(this.envioCamiones.cantidad_producto,this.envioCamiones.precio_envio)" >CrearDescuento</button>       
+            <button type="button" class="btn btn-success" (click)="descuentoE()" >Ver Descuento</button>       
             <button type="button" class="btn btn-primary" (click)="save()" >Crear</button>
             <button type="button" class="btn btn-success" (click)="cancelar()">Cancelar</button>
         </div>

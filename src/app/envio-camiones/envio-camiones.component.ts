@@ -56,7 +56,9 @@ public envioCamiones: EnvioCamiones ={
 
 public crear_envioCamion: FormGroup;
 
-public descuento?:number=0;
+public precioFinal?:number=0;
+public descuento?:number =0;
+
 
 constructor(
 private conecctionsService:ConecctionsService
@@ -78,7 +80,8 @@ return new FormGroup({
   fecha_registro: new FormControl('',[Validators.required]),
   fecha_entrega: new FormControl('',[Validators.required]),
   placa_vehiculo: new FormControl('',[Validators.required],), 
-  numero_guia: new FormControl('',[Validators.required],) 
+  numero_guia: new FormControl('',[Validators.required],),
+  descuento: new FormControl('',[Validators.required],) 
  
     
 })
@@ -89,27 +92,29 @@ return new FormGroup({
 save(){   
 this.trasl();
 
-
-{
-this.conecctionsService.postCrearProducto(this.producto).subscribe({
-  next:(response:any) => { 
-        console.log(response)          
-  },
-  error: (error:any) => {
-    console.log(error)
-  }
-});
-}   
+this.descuentoE()
+        {
+        this.conecctionsService.postCrearEnvioCamiones(this.envioCamiones).subscribe({
+          next:(response:any) => { 
+                console.log(response)          
+          },
+          error: (error:any) => {
+            console.log(error)
+          }
+        });
+        }   
    
 }
 
-descuentoE(cantidad:any, precio:any){
-  this.descuento = 0;
+descuentoE(){
+  let precio = this.crear_envioCamion.get('precio_envio')?.value;
+  let cantidad = this.crear_envioCamion.get('cantidad_producto')?.value;  
+  this.precioFinal =0;
   if(cantidad >=10){
-    this.descuento = precio-(precio/100*5)
-    this.envioCamiones.precio_envio = this.descuento;
+    this.descuento = precio/100*5;
+    this.precioFinal = precio-this.descuento
+    this.envioCamiones.precio_envio = this.precioFinal;    
   }  
-  
 
 }
 

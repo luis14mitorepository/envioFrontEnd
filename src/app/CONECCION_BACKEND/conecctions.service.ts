@@ -69,6 +69,13 @@ postCrearEnvioCamiones(envioCamiones: EnvioCamiones) {
   return this.http.post(`${this.API_URI}/create_envio_camiones`, envioCamiones);
 }
 
+//***************************EnviomMaritimo************************ */
+
+
+postCrearEnvioMaritimo(envioMaritimo: EnvioMaritimo) {
+  return this.http.post(`${this.API_URI}/create_Envio_maritimo`, envioMaritimo);
+}
+
 
 }
 

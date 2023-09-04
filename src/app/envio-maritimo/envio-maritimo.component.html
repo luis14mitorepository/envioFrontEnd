@@ -1,1 +1,83 @@
-<p>envio-maritimo works!</p>
+
+<div class="col-md-4 offset-md-4">
+    <form [formGroup]="crear_envioMaritimo" >
+      <fieldset>
+               
+        <div class="form-group row">
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Producto</label>
+            <input type="text" class="form-control" formControlName="producto_maritimo"  aria-describedby="nombreHelp" placeholder="Producto">
+            <small id="nombreHelp" class="form-text text-muted">Introduce id del producto </small>
+        </div>
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Cantidad Producto</label>
+            <input type="number" class="form-control" formControlName="cantidad_producto"  aria-describedby="nombreHelp" placeholder="Cantidad Producto">
+            <small id="nombreHelp" class="form-text text-muted">Introduce la cantidad de producto </small>
+        </div>
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Precio Envio</label>
+            <input type="text" class="form-control" formControlName="precio_envio"  aria-describedby="nombreHelp" placeholder="Precio Envio">
+            <small id="nombreHelp" class="form-text text-muted">Introduce  el precio de envio </small>
+        </div>
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">User</label>
+            <input type="text" class="form-control" formControlName="user"  aria-describedby="nombreHelp" placeholder="User">
+            <small id="nombreHelp" class="form-text text-muted">Introduce el id del usuario </small>
+        </div>
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Puerto</label>
+            <input type="text" class="form-control" formControlName="puerto"  aria-describedby="nombreHelp" placeholder="Puerto">
+            <small id="nombreHelp" class="form-text text-muted">Introduce el id del puerto </small>
+        </div>
+       
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Fecha Registro</label>
+            <input type="text" class="form-control" formControlName="fecha_registro"  aria-describedby="nombreHelp" placeholder="Fecha Registro">            
+        </div>
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Fecha Entrega</label>
+            <input type="text" class="form-control" formControlName="fecha_entrega"  aria-describedby="nombreHelp" placeholder="Fecha Entrega">
+            <small id="nombreHelp" class="form-text text-muted">Introduce La fecha de entrega </small>
+        </div>
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Numero de flota</label>
+            <input type="text" class="form-control" formControlName="numero_flota"  aria-describedby="nombreHelp" placeholder="numero_flota">
+            <small id="nombreHelp" class="form-text text-muted">Introduce la placa del vehiculo </small>
+        </div>
+
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Numero de guia</label>
+            <input type="text" class="form-control" formControlName="numero_guia"  aria-describedby="nombreHelp" placeholder="Numero de guia">
+            <small id="nombreHelp" class="form-text text-muted">Introduce   el numero de guia </small>
+        </div>
+    
+        <div class="form-group">
+            
+            <label for="Nombre" class="form-label mt-4">Precio con descuento</label>
+            <input type="number" class="form-control" name="descuento" id="descuento"  value="{{precioFinal}}"  aria-describedby="nombreHelp" placeholder="Descuento">
+            
+            <small id="nombreHelp" class="form-text text-muted">${{descuento}} &nbsp; Este es el descuento para este envio </small>
+        </div>
+
+
+
+
+        <div class="form-group"> 
+            <br>
+            <button type="button" class="btn btn-success" (click)="descuentoE()" >Ver Descuento</button>       
+            <button type="button" class="btn btn-primary" (click)="save()" >Crear</button>
+            <button type="button" class="btn btn-success" (click)="cancelar()">Cancelar</button>
+        </div>
+        
+        </div>
+    </fieldset>
+    </form>
+    <br>   
+    </div>
