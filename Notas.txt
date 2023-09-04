@@ -1,0 +1,25 @@
+<div class="form-group">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Campo</th>
+                    <th scope="col">Valor</th>              
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active">
+                    <th scope="row">email</th>
+                    <td>{{user.email}}</td>                
+                  </tr>
+                  <tr class="table-active">
+                    <th scope="row">nombre</th>
+                    <td>{{user.username}}</td>                
+                  </tr>
+                  <tr class="table-active">
+                    <th scope="row">password</th>
+                    <td>{{user.password}}</td>                
+                  </tr>              
+                  
+                </tbody>
+              </table>
+        </div>   

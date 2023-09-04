@@ -1,0 +1,33 @@
+
+<div class="col-md-4 offset-md-4">
+    <form [formGroup]="crear_producto" >
+      <fieldset>
+       
+        <div class="form-group row">
+        <div class="form-group">
+            <label for="Nombre" class="form-label mt-4">Nombre Producto</label>
+            <input type="text" class="form-control" formControlName="nombre_producto"  aria-describedby="nombreHelp" placeholder="Nombre">
+            <small id="nombreHelp" class="form-text text-muted">Introduce el Nombre Producto sin caracteres especiales</small>
+        </div>
+    
+        <div class="form-group">
+            <label for="Password" class="form-label mt-4">Codigo Producto</label>
+            <input type="text" class="form-control" formControlName="codigo_producto"  aria-describedby="passwordHelp" placeholder="Codigo">
+            <small id="passwordHelp" class="form-text text-muted">Introduce el Codigo Producto</small>             
+        </div>  
+        <div class="form-group">
+            <label for="Password" class="form-label mt-4">Descripcion</label>
+            <input type="text" class="form-control" formControlName="descripcion_producto"  aria-describedby="passwordHelp" placeholder="Descripcion">
+            <small id="passwordHelp" class="form-text text-muted">Introduce la descripcion</small>             
+        </div>  
+        <div class="form-group"> 
+            <br>       
+            <button type="button" class="btn btn-primary" (click)="save()" >Crear</button>
+            <button type="button" class="btn btn-success" (click)="cancelar()">Cancelar</button>
+        </div>
+        
+        </div>
+    </fieldset>
+    </form>
+    <br>   
+    </div>
